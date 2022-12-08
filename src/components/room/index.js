@@ -7,7 +7,7 @@ const Room = () => {
         <>
             <div className="d-flex justify-content-between">
                 <h1>Xonalar ro'yhati</h1>
-                <NavLink to="/room" className='teacher' activeclassname='active room'>
+                <NavLink to="/room" className='teacher room' activeclassname='active'>
                     Xona qo'shish                  
                 </NavLink>
             </div>

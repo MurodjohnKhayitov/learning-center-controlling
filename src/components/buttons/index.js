@@ -6,7 +6,7 @@ const Buttons = () => {
     return(
         <>
             <div className="buttons">
-                <NavLink to="/teacher" activeclassname='active'>
+                <NavLink to="/teachers" activeclassname='active'>
                     O'qituvchilar              
                 </NavLink>
                 <NavLink to="/group" activeclassname='active' className='group'>

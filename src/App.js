@@ -3,9 +3,10 @@ import Group from "./components/group";
 import Header from "./components/header";
 import Room from "./components/room";
 import Sidebar from "./components/sidebar";
-import Teacher from "./components/teacher";
-import Foundation from "./views/foundation";
-import Home from "./views/home";
+import Teachers from "./components/teachers";
+import Instructor from "./components/teachers/instructor";
+import Foundation from "./views/Foundation";
+import Home from "./views/Home";
 
 const App = () => {
   return (
@@ -19,9 +20,10 @@ const App = () => {
               <Routes>
                 <Route path="/" element={ <Home /> } />
                 <Route path='/foundation' element={<Foundation />} />
-                <Route path='/teacher' element={<Teacher />} />
+                <Route path='/teachers' element={<Teachers />} />
                 <Route path='/room' element={<Room />} />
                 <Route path='/group' element={<Group />} />
+                <Route path='/teachers/instructor' element={<Instructor />} />
               </Routes>
             </div>
           </div>
