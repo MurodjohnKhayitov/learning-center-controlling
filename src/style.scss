@@ -1,0 +1,63 @@
+$violet: #5541D7;
+
+@import './assets/style/var.scss';
+
+@mixin bg {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin fb($w) {
+    flex-basis: $w;
+    max-width: $w;
+    width: $w;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: #F7F7FC;
+    color: #11142D;
+}
+
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+button,
+input {
+    border: 0;
+    cursor: pointer;
+    &:focus {
+        outline: 0;
+    }
+}
+
+.main {
+    display: flex
+}
+
+.d-flex {
+    display: flex
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.wrapper {
+    @include fb(calc(100vw - 256px));
+    height: calc(100vh - 82px);
+    padding: 32px;
+    overflow: auto;   
+}
+

@@ -1,0 +1,44 @@
+@import '../../assets/style/var.scss';
+
+.header {
+    background-color: #fff;
+    padding: 20px 50px 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #F7F7FC;
+    &__logo {
+        font-size: 24px;
+        font-weight: 700;
+        &--icon {
+            color: $violet;
+            margin-right: 8px;
+            width: 40px;
+            height: 40px;
+            background-color: #F7F7FC;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    }
+    &__profile {
+        display: flex;
+        align-items: center;
+        &--img {
+            @include bg;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color:#F7F7FC;
+            margin-right: 16px;
+        }
+        &--name {
+            display: block;
+            font-weight: 700;
+        }
+        &--email {
+            font-style: 12px;
+            color: #6a6a79;
+            font-weight: 500;
+        }   
+    }
+}

@@ -1,0 +1,32 @@
+@import '../../assets/style/var.scss';
+ 
+.sidebar {
+    background-color: #fff;
+    height: calc(100vh - 82px);
+    width: 256px;
+    &__menu {
+        padding: 20px 16px;
+        a {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: .2s;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            &.active,
+            &:hover {
+                background-color: $violet;
+                color: #fff;
+                i {
+                    color: #fff;
+                }
+            }
+            i {
+                color: #9A9AB0;
+                margin-right: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.buttons {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    a {
+        padding: 19px 30px;
+        background-color: rgb(25, 140, 163);
+        color: #fff;
+        border-radius: 12px;
+        font-size: 18px;
+        margin: 0px 15px;
+        transition: .4s ;
+        &:hover {
+            background-color: rgb(19, 107, 124);
+        }
+        &.group {
+            background-color: rgb(54, 201, 108);
+            &:hover {
+                background-color: rgb(41, 124, 71);
+            }
+        }
+        &.room {
+            background-color: rgb(192, 60, 164);
+            &:hover {
+                background-color: rgb(138, 32, 115);
+            }
+        } 
+    }
+}

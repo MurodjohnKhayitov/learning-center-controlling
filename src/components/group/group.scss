@@ -1,0 +1,18 @@
+.group {
+    padding: 19px 30px;
+    background-color: rgb(25, 140, 163);
+    color: #fff;
+    border-radius: 12px;
+    font-size: 18px;
+    margin: 0px 15px;
+    transition: .4s ;
+    &.group {
+        background-color: rgb(54, 201, 108);
+            &:hover {
+                background-color: rgb(41, 124, 71);
+            }
+    }
+    &:hover {
+        background-color: rgb(19, 107, 124);
+    }
+}
