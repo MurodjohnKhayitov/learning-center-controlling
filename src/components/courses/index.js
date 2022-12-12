@@ -15,7 +15,7 @@ const Courses = ({courses}) => {
                         </div>
                         <div className="courses__info">
                             <div className="courses__top">
-                                <NavLink className='courses__top--pro'>Jadval</NavLink>
+                                <NavLink className='courses__top--pro' to="/jadval">Jadval</NavLink>
                                 <NavLink className='courses__top--time'>Davomiyligi: 22 soat</NavLink>
                                 <NavLink className='courses__top--duration'>Darslar soni: 100 ta</NavLink>
                             </div>
