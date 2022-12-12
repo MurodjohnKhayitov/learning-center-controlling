@@ -1,29 +1,43 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './courses.scss'
 
 const Courses = ({courses}) => {
+
+    const coursesArr = courses.map(course => {
+        const {id, ...oneCourse} = course
+        return(
+            <li className="courses__list" key={id}>
+                <div className="courses__item">
+                    <div className="courses__author">
+                        <div className='courses__author--img'>
+                            <img src={require('../../assets/img/'+oneCourse.img)} alt="" />
+                        </div>
+                        <Link className="courses__author--name">{oneCourse.author.name}</Link>
+                        <Link className="courses__author--spec">{oneCourse.author.speciality}</Link>
+                    </div>
+                    <div className="courses__info">
+                        <div className="courses__top">
+                            <Link className='courses__top--pro'>Jadval</Link>
+                            <div className="courses__top--left">
+                                <Link className='courses__top--time'>Davomiyligi: {oneCourse.time}</Link>
+                                <Link className='courses__top--duration'>Darslar soni: {oneCourse.duration}</Link>
+                            </div>
+                        </div>
+                        <h2>{oneCourse.course}</h2>
+                        <p>{oneCourse.text}</p>
+                    </div>
+                </div>
+            </li>
+        )
+    })
+
     return(
         <div className="courses">
             <div className="container">
-                <div className="courses__list">
-                    <div className="courses__item">
-                        <div className="courses__author">
-                            <div className='courses__author--img'></div>
-                            <NavLink className="courses__author--name">Aliyev Vali</NavLink>
-                            <NavLink className="courses__author--spec">Frontend</NavLink>
-                        </div>
-                        <div className="courses__info">
-                            <div className="courses__top">
-                                <NavLink className='courses__top--pro'>Jadval</NavLink>
-                                <NavLink className='courses__top--time'>Davomiyligi: 22 soat</NavLink>
-                                <NavLink className='courses__top--duration'>Darslar soni: 100 ta</NavLink>
-                            </div>
-                            <h2>Front-end mutaxassislik kursi</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis sint, error, odit quas dolor placeat quod nihil similique inventore recusandae odio praesentium cum doloremque in blanditiis doloribus voluptates excepturi.</p>
-                        </div>
-                    </div>
-                </div>
+                <ul>
+                    {coursesArr}
+                </ul>
             </div>
         </div>
     )
