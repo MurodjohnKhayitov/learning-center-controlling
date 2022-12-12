@@ -12,7 +12,6 @@ const App = () => {
   return (
     <div className="App">
         <BrowserRouter>
-          
           <Header />
           <div className="main">
             <Sidebar />
@@ -27,7 +26,6 @@ const App = () => {
               </Routes>
             </div>
           </div>
-
         </BrowserRouter>   
     </div>
   )
