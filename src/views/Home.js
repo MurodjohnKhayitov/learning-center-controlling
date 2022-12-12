@@ -1,5 +1,6 @@
 import React from "react";
 import Courses from "../components/courses";
+import Search  from "../components/search/Search";
 
 const Home = () => {
     const courses = [
@@ -30,6 +31,7 @@ const Home = () => {
     ]
     return(
         <>
+        <Search />
             <h1 className="btitle">Barcha kurslar ro'yhati</h1>
             <Courses courses={courses}/>
 
