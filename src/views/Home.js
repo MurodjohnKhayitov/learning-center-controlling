@@ -34,7 +34,6 @@ const Home = () => {
         <Search />
             <h1 className="btitle">Barcha kurslar ro'yhati</h1>
             <Courses courses={courses}/>
-
         </>
     )
 }
