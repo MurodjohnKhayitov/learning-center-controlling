@@ -1,0 +1,88 @@
+
+.courses {
+    &__list {
+        width: 90%;
+        background-color: #fff;
+        padding:20px;
+        margin-bottom: 40px;
+        border-radius: 10px;
+        &:hover {
+            // box-shadow: -4px 7px 10px -7px rgb(0, 0, 0, 0.4);
+        }
+    }
+    &__item {
+        display: flex;
+    }
+    &__author{
+        padding: 20px;
+        text-align: center;
+        &--img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: rgb(179, 187, 184);
+            margin-bottom: 10px;
+        }
+        &--name {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+        }
+        &--spec {
+            font-size: 18px;
+            font-weight: 500;
+            color: rgb(159, 153, 153);
+        }
+    }
+    &__info {
+        margin-left: 20px;
+        h2 {
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 16px;
+            color:rgb(159, 153, 153);
+        }
+    }
+    &__top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        &--pro {
+            background-color: rgb(64, 97, 97);
+            padding: 7px 10px;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 8px;
+            transition: .4s;
+            &:hover {
+                background-color:rgb(50, 77, 77);
+            }
+        }
+        &--time {
+            margin-left: auto;
+            background-color: rgb(161, 114, 59);
+            padding: 7px 10px;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 8px;
+            transition: .4s;
+            &:hover {
+                background-color:rgb(148, 90, 24);
+            }
+        }
+        &--duration {
+            margin-left: 15px;
+            background-color: rgb(64, 183, 90);
+            padding: 7px 10px;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 8px;
+            transition: .4s;
+            &:hover {
+                background-color:rgb(22, 168, 78);
+            }
+        }
+    }
+}
