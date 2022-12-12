@@ -13,7 +13,7 @@ const Buttons = () => {
                     Guruhlar
                 </NavLink>
                 <NavLink to="/room" activeclassname='active' className='room'>
-                    Xonalar                   
+                    Xonalar   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, expedita!</p>                
                 </NavLink>
             </div>
         </>
