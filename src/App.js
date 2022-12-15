@@ -4,7 +4,6 @@ import Header from "./components/header";
 import Room from "./components/room";
 import Sidebar from "./components/sidebar";
 import Teachers from "./components/teachers";
-// import Instructor from "./components/teachers/instructor";
 import Foundation from "./views/Foundation";
 import Home from "./views/Home";
 
@@ -22,7 +21,6 @@ const App = () => {
                 <Route path='/teachers' element={<Teachers />} />
                 <Route path='/room' element={<Room />} />
                 <Route path='/group' element={<Group />} />
-                {/* <Route path='/teachers/instructor' element={<Instructor />} /> */}
               </Routes>
             </div>
           </div>
