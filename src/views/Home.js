@@ -1,15 +1,16 @@
 import React from "react";
 import Courses from "../components/courses";
+import Search  from "../components/search/Search";
 
 const Home = () => {
     const courses = [
         {
             id:0,
-            img: 'https://postila.ru/data/a5/ef/14/bd/a5ef14bdafa593594d27d9b6473f35a4132ca79d0f4f5d4eac0b7edbe14c62a2.jpg',
+            img: 'pict1.jpg',
             duration: '100 ta',
-            time: '22 soat',
+            time: '200 soat',
             course: 'Frontend mutaxasislik kursi',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+            text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using  making it look like readable English.",
             author: {
                 name: 'Aliyev Vali',
                 speciality: 'Frontend'
@@ -17,9 +18,9 @@ const Home = () => {
         },
         {
             id:1,
-            img: 'https://yandex.ru/images/search?text=images+person&img_url=http%3A%2F%2Fi.pinimg.com%2Foriginals%2Ffc%2F67%2F03%2Ffc6703e79d41363832817cbdf297beaa.jpg&pos=7&rpt=simage&stype=image&lr=10335&parent-reqid=1670821692631829-17426207716315213589-sas3-0973-1aa-sas-l7-balancer-8080-BAL-5901&source=serp',
-            duration: '93 ta',
-            time: '25 soat',
+            img: 'pict2.jpg',
+            duration: '93 ta',  
+            time: '186 soat',
             course: 'Backend mutaxasislik kursi',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             author: {
@@ -27,12 +28,24 @@ const Home = () => {
                 speciality: 'Backend'
             }
         },
+        {
+            id:2,
+            img: 'pict3.jpg',
+            duration: '50 ta',  
+            time: '150 soat',
+            course: 'Flutter mutaxasislik kursi',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+            author: {
+                name: 'Jo`rayev Davron',
+                speciality: 'Flutter'
+            }
+        },
     ]
     return(
         <>
+            <Search />
             <h1 className="btitle">Barcha kurslar ro'yhati</h1>
             <Courses courses={courses}/>
-
         </>
     )
 }
