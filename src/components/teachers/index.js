@@ -1,26 +1,26 @@
 import React, { useState } from "react";
-import { Button, Modal } from "antd";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Modal } from "antd";
+import { useNavigate } from "react-router-dom";
 import "./teachers.scss";
 import { Data } from "./Data";
 import {v4 as uuid} from "uuid"
 
 const Teachers = () => {
   const [open, setOpen] = useState(false);
-  const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState("Content of the modal");
+  // const [confirmLoading, setConfirmLoading] = useState(false);
+  // const [setModalText] = useState("Content of the modal");
   const showModal = () => {
     setOpen(true);
   };
 
-  const handleOk = () => {
-    setModalText("The modal will be closed after two seconds");
-    setConfirmLoading(true);
-    setTimeout(() => {
-      setOpen(false);
-      setConfirmLoading(false);
-    }, 2000);
-  };
+  // const handleOk = () => {
+  //   setModalText("The modal will be closed after two seconds");
+  //   setConfirmLoading(true);
+  //   setTimeout(() => {
+  //     setOpen(false);
+  //     setConfirmLoading(false);
+  //   }, 2000);
+  // };
 
   const handleCancel = () => {
     console.log("Clicked cancel button");
@@ -57,7 +57,7 @@ const Teachers = () => {
       <Modal
         open={open}
         onOk={handleSubmit}
-        confirmLoading={confirmLoading}
+        // confirmLoading={confirmLoading}
         onCancel={handleCancel}
       >
         <h1 className="teacher__title">O'qituvchi haqida ma'lumot kiriting</h1>
@@ -104,15 +104,9 @@ const Teachers = () => {
                 Data.map((item) => {
                     return (
                         <tr>
-                            <td>
-                                {item.name}
-                            </td>
-                            <td>
-                                {item.specialist}
-                            </td>
-                            <td>
-                                {item.data}
-                            </td>
+                            <td>{item.name}</td>
+                            <td>{item.specialist}</td>
+                            <td>{item.data}</td>
                         </tr>
                     )
                 })
@@ -126,13 +120,3 @@ const Teachers = () => {
 };
 
 export default Teachers;
-
-
-  {/* <tr>
-            <td>1</td>
-            <td>
-              <NavLink to="/teachers/instructor">Aliyev Vali</NavLink>
-            </td>
-            <td>Frontend</td>
-            <td>9:00 - 18:00</td>
-          </tr> */}

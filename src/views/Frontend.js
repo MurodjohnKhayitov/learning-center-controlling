@@ -1,14 +1,14 @@
 import React from "react";
 import Buttons from "../components/buttons";
 
-const Foundation = () => {
+const Frontend = () => {
     return(
         <>
             <Buttons />
-            <div className="btitle">Foundation o'qituvchilari ro'yhati</div>
+            <div className="btitle">Frontend o'qituvchilari ro'yhati</div>
         </>
     )
 }
 
-export default Foundation
+export default Frontend
 

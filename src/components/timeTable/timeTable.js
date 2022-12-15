@@ -1,14 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import './timeTable.scss'
 
-const timeTable = () => {
+const TimeTable = () => {
     return (
-        <div>
-            
+        <div className='d-flex justify-content-between align-center timetable'>
+            <div className="btitle">Dars jadvali</div>
+            <NavLink to="#" activeclassname='active'>
+                Jadval qo'shish 
+            </NavLink>
         </div>
     );
 };
 
-timeTable.propTypes = {};
+TimeTable.propTypes = {};
 
-export default timeTable;
+export default TimeTable;

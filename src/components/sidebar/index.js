@@ -24,7 +24,7 @@ const Sidebar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/front' activeclassname='active'>
+                        <NavLink to='/frontend' activeclassname='active'>
                             <span>
                                 <i className="fas fa-compass"></i>
                             </span>
@@ -32,7 +32,7 @@ const Sidebar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/backnode' activeclassname='active'>
+                        <NavLink to='/backend' activeclassname='active'>
                             <span>
                                 <i className="fas fa-compass"></i>
                             </span>
@@ -93,6 +93,15 @@ const Sidebar = () => {
                                 <i className="fas fa-compass"></i>
                             </span>
                             Kids Backend
+                        </NavLink>
+                    </li>
+                    <hr />
+                    <li>
+                        <NavLink to='/timetable' className='mt-1' activeclassname='active'>
+                            <span>
+                                <i className="fas fa-compass"></i>
+                            </span>
+                            Dars jadvali
                         </NavLink>
                     </li>
                 </ul>

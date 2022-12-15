@@ -8,6 +8,20 @@ import "./Search.css"
 const Search = () => {
     const [carList, setCarList] = useState(data);
     const [searchTerm, setSearchTerm] = useState("");
+    // const [val, setVal] = useState([])
+
+    const filterCars = (searchText, listOfCars) => {
+        if (!searchText) {
+          return listOfCars;
+        }
+
+
+import "./Search.css"
+
+
+const Search = () => {
+    const [carList, setCarList] = useState(data);
+    const [searchTerm, setSearchTerm] = useState("");
     const [val, setVal] = useState([])
 
     const filterCars = (searchText, listOfCars) => {
@@ -57,6 +71,7 @@ const Search = () => {
       if (!searchText) {
         return listOfCars;
       }
+
   
         return listOfCars.filter(({ car_model }) =>
           car_model.toLowerCase().includes(searchText.toLowerCase())
@@ -72,6 +87,16 @@ const Search = () => {
     }, [searchTerm]);
 
 
+    // const handleAdd = () => {
+    //   const abc=[...val, []]
+    //   setVal(abc)
+    // }
+
+    // const handleChange = (onchangeValue, i) => {
+    //     const inputData = [...val];
+    //     inputData[i]=onchangeValue.target.value
+    // };
+
   
 
     const handleAdd = () => {
@@ -85,6 +110,7 @@ const Search = () => {
     };
 
   
+
 
 
 
@@ -119,8 +145,12 @@ const Search = () => {
 };
 
 
+export default Search;
+
+
 
 
 
 export default Search;
+
 
