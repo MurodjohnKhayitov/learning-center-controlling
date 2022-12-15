@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { data } from './data';
 
-import "./Search.scss"
+import "./Search.css"
 
 const Search = () => {
   

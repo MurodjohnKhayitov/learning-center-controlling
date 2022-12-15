@@ -7,13 +7,13 @@ const Buttons = () => {
         <>
             <div className="buttons">
                 <NavLink to="/teachers" activeclassname='active'>
-                    O'qituvchilar              
+                    O'qituvchilar
                 </NavLink>
                 <NavLink to="/group" activeclassname='active' className='group'>
                     Guruhlar
                 </NavLink>
                 <NavLink to="/room" activeclassname='active' className='room'>
-                    Xonalar                 
+                    Xonalar              
                 </NavLink>
             </div>
         </>
