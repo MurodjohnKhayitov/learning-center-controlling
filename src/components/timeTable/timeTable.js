@@ -7,7 +7,7 @@ const TimeTable = () => {
         <div className='d-flex justify-content-between align-center timetable'>
             <div className="btitle">Dars jadvali</div>
             <NavLink to="#" activeclassname='active'>
-                Jadval qo'shish              
+                Jadval qo'shish 
             </NavLink>
         </div>
     );
