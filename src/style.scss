@@ -54,6 +54,10 @@ input {
     justify-content: space-between;
 }
 
+.align-center {
+    align-items: center;
+}
+
 .wrapper {
     @include fb(calc(100vw - 256px));
     height: calc(100vh - 82px);
@@ -83,5 +87,11 @@ input {
 }
 .mt-3 {
     margin-top: 30px;
+}
+.mt-2 {
+    margin-top: 20px;
+}
+.mt-1 {
+    margin-top: 10px;
 }
 

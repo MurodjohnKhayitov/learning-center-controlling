@@ -1,66 +1,48 @@
+import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
+import { data } from './data';
+import "./Search.css"
 
-import React, {useState} from 'react';
-
-
-const Search = () => {
-  const [val, setVal] = useState([])
-
-  const handleAdd = () => {
-    const abc=[...val, []]
-    setVal(abc)
-  }
-
-  const handleChange = (onchangeValue, i) => {
-    const inputData = [...val];
-    inputData[i]=onchangeValue.target.value
-  };
-
-  return (
-    <div>
-      <button onClick={() => handleAdd()}>Add</button>
-      {val.map((data, i ) => {
-        return (
-          <div>
-            <input type="text" onChange={e=> handleChange(e, i)} placeholder="edsfdhgfhjdsfjad"/>
-            {/* <button onClick={() => handleDelete(i)}>X</button> */}
-          </div>
-        )
-      })
-
-      }
-
-import React, { useState, useEffect } from "react";
-import "./Search.scss";
-import { data } from "./data";
-import { Link } from "react-router-dom";
-
-const filterCars = (searchText, listOfCars) => {
-  if (!searchText) {
-    return listOfCars;
-  }
-
-  return listOfCars.filter(({ car_model }) =>
-    car_model.toLowerCase().includes(searchText.toLowerCase())
-  );
-};
 
 const Search = () => {
-  const [carList, setCarList] = useState(data);
-  const [searchTerm, setSearchTerm] = useState("");
+    const [carList, setCarList] = useState(data);
+    const [searchTerm, setSearchTerm] = useState("");
+    // const [val, setVal] = useState([])
 
-  useEffect(() => {
-    const Debounce = setTimeout(() => {
-      const filteredCars = filterCars(searchTerm, data);
-      setCarList(filteredCars);
-    }, 300);
-    return () => clearTimeout(Debounce);
-  }, [searchTerm]);
+    const filterCars = (searchText, listOfCars) => {
+        if (!searchText) {
+          return listOfCars;
+        }
+  
+        return listOfCars.filter(({ car_model }) =>
+          car_model.toLowerCase().includes(searchText.toLowerCase())
+        );
+    };
 
+    useEffect(() => {
+        const Debounce = setTimeout(() => {
+          const filteredCars = filterCars(searchTerm, data);
+          setCarList(filteredCars);
+        }, 300);
+        return () => clearTimeout(Debounce);
+    }, [searchTerm]);
+
+
+    // const handleAdd = () => {
+    //   const abc=[...val, []]
+    //   setVal(abc)
+    // }
+
+    // const handleChange = (onchangeValue, i) => {
+    //     const inputData = [...val];
+    //     inputData[i]=onchangeValue.target.value
+    // };
+
+ 
   return (
     <div>
       <div className="container">
         <div className="list">
-          {/* <h1>Studentes list</h1> */}
           <form className="form" action="#">
             <input
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -86,9 +68,4 @@ const Search = () => {
   );
 };
 
-
-
 export default Search;
-
-export default Search;
-
