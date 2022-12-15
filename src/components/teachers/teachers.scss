@@ -10,3 +10,29 @@
         background-color: rgb(19, 107, 124);
     }
 }
+
+.teacher__title {
+    padding: 15px 0;
+    text-align: center;
+}
+
+.modal__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.modal__input {
+    width: 400px;
+    height: 40px;
+    border: 2px solid #5541D7;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
