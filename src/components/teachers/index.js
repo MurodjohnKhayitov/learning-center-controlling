@@ -7,20 +7,10 @@ import {v4 as uuid} from "uuid"
 
 const Teachers = () => {
   const [open, setOpen] = useState(false);
-  // const [confirmLoading, setConfirmLoading] = useState(false);
-  // const [setModalText] = useState("Content of the modal");
+  
   const showModal = () => {
     setOpen(true);
-  };
-
-  // const handleOk = () => {
-  //   setModalText("The modal will be closed after two seconds");
-  //   setConfirmLoading(true);
-  //   setTimeout(() => {
-  //     setOpen(false);
-  //     setConfirmLoading(false);
-  //   }, 2000);
-  // };
+  };  
 
   const handleCancel = () => {
     console.log("Clicked cancel button");
@@ -36,8 +26,6 @@ const Teachers = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    
    
     const ids = uuid();
     let uniqueId = ids.slice(0,8)
@@ -45,7 +33,6 @@ const Teachers = () => {
     let a = name,
         b = specialist,
         c = data
-
 
     Data.push({id: uniqueId, name :  a, specialist : b, data : c})
 

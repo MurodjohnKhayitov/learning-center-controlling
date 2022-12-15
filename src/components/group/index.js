@@ -10,6 +10,7 @@ const Group = () => {
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [modalText, setModalText] = useState("Content of the modal");
+ 
   const showModal = () => {
     setOpen(true);
   };

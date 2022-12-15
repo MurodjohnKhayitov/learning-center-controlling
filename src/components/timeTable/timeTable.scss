@@ -1,3 +1,9 @@
+.time__parent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 
 .timetable {
     a {
@@ -12,4 +18,10 @@
             background-color: rgb(19, 107, 124);
         }
     }
+}
+
+
+.select__table {
+    margin-top: 20px;
+    padding-bottom: 30px;
 }
