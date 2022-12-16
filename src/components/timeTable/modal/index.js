@@ -22,6 +22,8 @@ const ModalInfo = () => {
         },
     ]
 
+    
+  const [teacher, setTeacher] = useState();
   const [open, setOpen] = useState(false);
   
   return (
@@ -48,7 +50,7 @@ const ModalInfo = () => {
                                 <li key={id}>
                                     <form>
                                         <div >
-                                            <input name="name" type="checkbox" id={id} className='checkbox' />
+                                            <input name="name" type="checkbox" id={id} className='checkbox'  onChange={(e) => setTeacher(e.target.value)}/>
                                             <label className='' for={id}>{teacherInfo.name}</label>
                                         </div>
                                     </form>
