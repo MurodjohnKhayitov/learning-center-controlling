@@ -4,11 +4,17 @@
     flex-direction: column;
 }
 
+.select__table {
+    margin-top: 20px;
+    padding-bottom: 30px;
+}
 
 .timetable {
-    a {
-        padding: 19px 30px;
-        background-color: rgb(25, 140, 163);
+    button {
+        display: flex;
+        align-items: center;
+        padding: 25px;
+        background-color: rgb(25, 144, 168);
         color: #fff;
         border-radius: 12px;
         font-size: 18px;
@@ -21,7 +27,3 @@
 }
 
 
-.select__table {
-    margin-top: 20px;
-    padding-bottom: 30px;
-}

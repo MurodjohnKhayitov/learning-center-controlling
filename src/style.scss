@@ -95,3 +95,14 @@ input {
     margin-top: 10px;
 }
 
+.row {
+    @include fb(100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col-4 {
+    @include fb(33.33%);
+    padding: 0px 16px;
+}
