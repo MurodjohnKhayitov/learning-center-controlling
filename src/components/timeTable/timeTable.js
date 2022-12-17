@@ -104,6 +104,57 @@ const TimeTable = () => {
                   </tr>
                 
             ))}
+            {timeTable.map( table => (
+                
+                  <tr key={table.id}>
+                      <td>{table.lessonHour}</td>
+                      
+                      {table?.dayWeek?.map((day, id) => (
+                        
+                          <td key={id}>
+                            <div className="name">{day.teacher}</div>
+                            <div className="name">{day.group}</div>
+                            <div className="name">{day.room}</div>
+                          </td>
+                        
+                      ))}
+                  </tr>
+                
+            ))}
+            {timeTable.map( table => (
+                
+                  <tr key={table.id}>
+                      <td>{table.lessonHour}</td>
+                      
+                      {table?.dayWeek?.map((day, id) => (
+                        
+                          <td key={id}>
+                            <div className="name">{day.teacher}</div>
+                            <div className="name">{day.group}</div>
+                            <div className="name">{day.room}</div>
+                          </td>
+                        
+                      ))}
+                  </tr>
+                
+            ))}
+            {timeTable.map( table => (
+                
+                  <tr key={table.id}>
+                      <td>{table.lessonHour}</td>
+                      
+                      {table?.dayWeek?.map((day, id) => (
+                        
+                          <td key={id}>
+                            <div className="name">{day.teacher}</div>
+                            <div className="name">{day.group}</div>
+                            <div className="name">{day.room}</div>
+                          </td>
+                        
+                      ))}
+                  </tr>
+                
+            ))}
           </tbody>
         </table>
     </div>
