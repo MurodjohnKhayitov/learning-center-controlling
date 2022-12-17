@@ -44,7 +44,6 @@ const Teachers = () => {
       <Modal
         open={open}
         onOk={handleSubmit}
-        // confirmLoading={confirmLoading}
         onCancel={handleCancel}
       >
         <h1 className="teacher__title">O'qituvchi haqida ma'lumot kiriting</h1>
@@ -61,7 +60,7 @@ const Teachers = () => {
             placeholder="Mutaxassisligi"
             onChange={(e) => setSpecialist(e.target.value)}
           />
-          <input className="modal__input" type="text" placeholder="Ish vaqti"    onChange={(e) => setData(e.target.value)}/>
+          <input className="modal__input" type="text" placeholder="Ish vaqti" onChange={(e) => setData(e.target.value)}/>
         </form>
       </Modal>
 
