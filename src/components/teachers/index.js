@@ -78,6 +78,7 @@ const Teachers = () => {
       <table className="table">
         <thead>
           <tr>
+            <th>№</th>
             <th>Ismi-familyasi</th>
             <th>Mutaxasisligi</th>
             <th>Ish vaqti</th>
@@ -87,9 +88,10 @@ const Teachers = () => {
             {
                 Data && Data.length > 0 
                 ?
-                Data.map((item) => {
+                Data.map((item,index) => {
                     return (
                         <tr>
+                            <td>{index}</td>
                             <td>{item.name}</td>
                             <td>{item.specialist}</td>
                             <td>{item.data}</td>

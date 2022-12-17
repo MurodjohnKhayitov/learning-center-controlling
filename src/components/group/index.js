@@ -95,6 +95,7 @@ const Group = () => {
       <table className="table">
         <thead>
           <tr>
+            <th>№</th>
             <th>Guruh Nomi</th>
             <th>O'quvchilar soni</th>
             <th>Dars vaqti</th>
@@ -102,9 +103,10 @@ const Group = () => {
         </thead>
         <tbody>
           {GroupData && GroupData.length > 0
-            ? GroupData.map((item) => {
+            ? GroupData.map((item,index) => {
                 return (
                   <tr>
+                    <td>{index}</td>
                     <td>{item.groupName}</td>
                     <td>{item.numberPupil}</td>
                     <td>{item.courseTime}</td>
