@@ -57,7 +57,48 @@ const timeTable = [
     ]
   }
 ]
-
+const teachers = [
+  {
+      id: "1",
+      name: "Ali Valiyev"
+  },
+  {
+      id: "2",
+      name: "Valiyev Ali",
+  },
+  {
+      id: "3",
+      name: "Jurayeva Sabina",
+  },
+]
+const courses = [
+  {
+      id: "1",
+      speciality: "Frontend"
+  },
+  {
+      id: "2",
+      speciality: "Backend"
+  },
+  {
+      id: "3",
+      speciality: "Flutter"
+  },
+]
+const rooms = [
+  {
+      id: "1",
+      room: "Xona 1"
+  },
+  {
+      id: "2",
+      room: "Xona 2"
+  },
+  {
+      id: "3",
+      room: "Xona 3"
+  },
+]
  
 const TimeTable = () => {
   
@@ -65,7 +106,7 @@ const TimeTable = () => {
     <div className="time__parent">
       <div className="d-flex justify-content-between align-center timetable">
         <div className="btitle">Dars jadvali</div>
-        < ModalInfo /> 
+        < ModalInfo teachers={teachers} courses={courses} rooms={rooms}/> 
       </div>
 
       <div className="">
@@ -85,18 +126,15 @@ const TimeTable = () => {
           </thead>
           <tbody>
             {timeTable.map( table => (
-                
                   <tr key={table.id}>
                       <td>{table.lessonHour}</td>
                       
                       {table?.dayWeek?.map((day, id) => (
-                        
                           <td key={id}>
                             <div className="name">{day.teacher}</div>
                             <div className="name">{day.group}</div>
                             <div className="name">{day.room}</div>
                           </td>
-                        
                       ))}
                   </tr>   
             ))}
