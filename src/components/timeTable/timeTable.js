@@ -59,17 +59,14 @@ const timeTable = [
 ]
 
  
-
 const TimeTable = () => {
   
-
   return (
     <div className="time__parent">
       <div className="d-flex justify-content-between align-center timetable">
         <div className="btitle">Dars jadvali</div>
         < ModalInfo /> 
       </div>
-
 
       <div className="">
         <h1 className="btitle">O'qituvchining dars jadvali</h1>
@@ -101,59 +98,7 @@ const TimeTable = () => {
                           </td>
                         
                       ))}
-                  </tr>
-                
-            ))}
-            {timeTable.map( table => (
-                
-                  <tr key={table.id}>
-                      <td>{table.lessonHour}</td>
-                      
-                      {table?.dayWeek?.map((day, id) => (
-                        
-                          <td key={id}>
-                            <div className="name">{day.teacher}</div>
-                            <div className="name">{day.group}</div>
-                            <div className="name">{day.room}</div>
-                          </td>
-                        
-                      ))}
-                  </tr>
-                
-            ))}
-            {timeTable.map( table => (
-                
-                  <tr key={table.id}>
-                      <td>{table.lessonHour}</td>
-                      
-                      {table?.dayWeek?.map((day, id) => (
-                        
-                          <td key={id}>
-                            <div className="name">{day.teacher}</div>
-                            <div className="name">{day.group}</div>
-                            <div className="name">{day.room}</div>
-                          </td>
-                        
-                      ))}
-                  </tr>
-                
-            ))}
-            {timeTable.map( table => (
-                
-                  <tr key={table.id}>
-                      <td>{table.lessonHour}</td>
-                      
-                      {table?.dayWeek?.map((day, id) => (
-                        
-                          <td key={id}>
-                            <div className="name">{day.teacher}</div>
-                            <div className="name">{day.group}</div>
-                            <div className="name">{day.room}</div>
-                          </td>
-                        
-                      ))}
-                  </tr>
-                
+                  </tr>   
             ))}
           </tbody>
         </table>
