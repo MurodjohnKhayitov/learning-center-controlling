@@ -3,56 +3,14 @@ import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
 import "../timeTable.scss";
 
-const teachers = [
-    {
-        id: "1",
-        name: "Ali Valiyev"
-    },
-    {
-        id: "2",
-        name: "Valiyev Ali",
-    },
-    {
-        id: "3",
-        name: "Jurayeva Sabina",
-    },
-]
-const courses = [
-    {
-        id: "1",
-        speciality: "Frontend"
-    },
-    {
-        id: "2",
-        speciality: "Backend"
-    },
-    {
-        id: "3",
-        speciality: "Flutter"
-    },
-]
-const rooms = [
-    {
-        id: "1",
-        room: "Xona 1"
-    },
-    {
-        id: "2",
-        room: "Xona 2"
-    },
-    {
-        id: "3",
-        room: "Xona 3"
-    },
-]
 
-const ModalInfo = () => {
+const ModalInfo = ({teachers,courses,rooms}) => {
  
     const [open, setOpen] = useState(false);
 
     const [selectedTeachers, setSelectedTeachers] = useState([])
     const [selectedCourses,setSelectedCourses] = useState([])
-    // const [selectedRooms,setSelectedRooms] = useState([])
+    const [selectedRooms,setSelectedRooms] = useState([])
 
     // 1
     const handleChangeTeachers = (e) => {
@@ -62,7 +20,7 @@ const ModalInfo = () => {
                 checked ? [...item, name] : item.filter(val => val !== name)
             )
         })
-        console.log(selectedTeachers);
+        // console.log(selectedTeachers);
     }
 
     // 2
@@ -73,20 +31,18 @@ const ModalInfo = () => {
                 checked ? [...item2, name] : item2.filter(val => val !== name)
             )
         })
-        console.log(selectedCourses)
     }
 
     // 3
-    // const handleChangeRooms = (e) => {
-    //     const {name,checked} = e.target
-    //     console.log(name, checked);
-    //     setSelectedRooms(
-    //         item => checked 
-    //             ? [...item, name] 
-    //             : item.filter(val => val !== name)
-    //     )
-    //     // console.log(selectedRooms)
-    // }
+    const handleChangeRooms = (e) => {
+        const {name,checked} = e.target
+        console.log(name, checked)
+        setSelectedRooms(item3 => {
+            return(
+                checked ? [...item3, name] : item3.filter(val => val !== name)
+            )
+        })
+    }
 
     return (
         <div className='timetable'>
@@ -116,7 +72,7 @@ const ModalInfo = () => {
                                     checked={selectedTeachers.some(val => val === teacher.id)}
                                     onChange={handleChangeTeachers} 
                                 />
-                                <label className='' htmlFor={teacher.id}>{teacher.name}</label>
+                                <label htmlFor={teacher.id}>{teacher.name}</label>
                             </div>
                         ))}
                     </form>
@@ -134,7 +90,7 @@ const ModalInfo = () => {
                                     checked={selectedCourses.some(val => val === course.id)}
                                     onChange={handleChangeCourses}
                                 />
-                                <label className='' htmlFor={course.id}>{course.speciality}</label>
+                                <label htmlFor={course.id}>{course.speciality}</label>
                             </div>
                         ))}
                     </form>
@@ -142,16 +98,17 @@ const ModalInfo = () => {
                 <div className='col-4'>
                     <h3 className='mb-2'>Xonalar ro'yhati</h3>
                     <form>
-                    {rooms.map((item,id) => (
-                            <div key={id}>
+                        {rooms.map((item) => (
+                            <div key={item.id}>
                                 <input
-                                    id={id}
+                                    id={item.id}
+                                    value={item.id}
                                     name={item.room}
                                     type="checkbox"
-                                    // checked={selectedRooms.some(val => val === item.id)}
-                                    // onChange={handleChangeRooms}
+                                    checked={selectedRooms.some(val => val === item.id)}
+                                    onChange={handleChangeRooms}
                                 />
-                                <label className='' htmlFor={item.id}>{item.room}</label>
+                                <label htmlFor={item.id}>{item.room}</label>
                             </div>
                         ))}
                     </form>   
