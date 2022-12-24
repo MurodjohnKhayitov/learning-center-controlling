@@ -1,122 +1,128 @@
 /* eslint-disable array-callback-return */
-import React, { useState } from 'react';
-import { Button, Modal } from 'antd';
+import React, { useState } from "react";
+import { Button, Modal } from "antd";
 import "../timeTable.scss";
 
+import useDataContext from "../../../Hooks/DataHook";
 
-const ModalInfo = ({teachers,courses,rooms}) => {
- 
-    const [open, setOpen] = useState(false);
+const ModalInfo = ({ teachers, courses, rooms }) => {
+  const [open, setOpen] = useState(false);
 
-    const [selectedTeachers, setSelectedTeachers] = useState([])
-    const [selectedCourses,setSelectedCourses] = useState([])
-    const [selectedRooms,setSelectedRooms] = useState([])
+  const [selectedTeachers, setSelectedTeachers] = useState([]);
+  const [selectedCourses, setSelectedCourses] = useState([]);
+  const [selectedRooms, setSelectedRooms] = useState([]);
+  const [data, setdata] = useDataContext();
 
-    // 1
-    const handleChangeTeachers = (e) => {
-        const {name,checked} = e.target
-        setSelectedTeachers(item => {
-            return(
-                checked ? [...item, name] : item.filter(val => val !== name)
-            )
-        })
-        // console.log(selectedTeachers);
-    }
+  // setdata(selectedTeachers,selectedCourses,selectedRooms)
+  // console.log(data)
 
-    // 2
-    const handleChangeCourses = (e) => {
-        const {name, checked} = e.target
-        setSelectedCourses(item2 => {
-            return(
-                checked ? [...item2, name] : item2.filter(val => val !== name)
-            )
-        })
-    }
+  // 1
+  const handleChangeTeachers = (e) => {
+    const { id, checked } = e.target;
+    setSelectedTeachers((item) => {
+      return checked ? [...item, id] : item.filter((val) => val !== id);
+    });   
+  };
+  // console.log(selectedTeachers);
 
-    // 3
-    const handleChangeRooms = (e) => {
-        const {name,checked} = e.target
-        console.log(name, checked)
-        setSelectedRooms(item3 => {
-            return(
-                checked ? [...item3, name] : item3.filter(val => val !== name)
-            )
-        })
-    }
+  // 2
+  const handleChangeCourses = (e) => {
+    const { id, checked } = e.target;
+    setSelectedCourses((item2) => {
+      return checked ? [...item2, id] : item2.filter((val) => val !== id);
+    });
+  };
+  // console.log(selectedCourses);
 
-    return (
-        <div className='timetable'>
-        <Button className='timetable' type="primary" onClick={() => setOpen(true)}>
-            Jadval qo'shish
-        </Button>
-        <Modal
-            title="Jadval ma'lumotini qo'shish"
-            className='title'
-            centered
-            open={open}
-            onOk={() => setOpen(false)}
-            onCancel={() => setOpen(false)}
-            width={1000}
-        >
-            <div className="row">
-                <div className='col-4'>
-                    <h3 className='mb-2'>Domlalar ro'yhati</h3>
-                    <form>
-                        {teachers.map((teacher) => (         
-                            <div key={teacher.id}>
-                                <input
-                                    id={teacher.id}
-                                    value={teacher.id}
-                                    name={teacher.name} 
-                                    type="checkbox" 
-                                    checked={selectedTeachers.some(val => val === teacher.id)}
-                                    onChange={handleChangeTeachers} 
-                                />
-                                <label htmlFor={teacher.id}>{teacher.name}</label>
-                            </div>
-                        ))}
-                    </form>
+  // 3
+  const handleChangeRooms = (e) => {
+    const { id, checked } = e.target
+    setSelectedRooms((item3) => {
+      return checked ? [...item3, id] : item3.filter((val) => val !== id);
+    });
+  }
+  console.log(selectedRooms);
+
+  const handleSubmit = () => {
+    let data = [selectedTeachers, selectedCourses, selectedRooms];
+    console.log(data)
+  }
+
+  return (
+    <div className="timetable">
+      <Button
+        className="timetable"
+        type="primary"
+        onClick={() => setOpen(true)}
+      >
+        Jadval qo'shish
+      </Button>
+      <Modal
+        title="Jadval ma'lumotini qo'shish" 
+        className="title"
+        centered
+        open={open}
+        onOk={() => {
+            setOpen(false)
+            handleSubmit()
+        }}
+        onCancel={() => setOpen(false)}
+        width={1000}
+      > 
+      <form>
+        <div className="row">   
+            <div className="col-4">
+              <h3 className="mb-2">Domlalar ro'yhati</h3>
+              {teachers.map((teacher) => (
+                <div className="form__elements" key={teacher.id}>
+                  <input
+                    id={teacher.id}
+                    value={teacher.id}
+                    name={teacher.id}
+                    type="checkbox"
+                    checked={selectedTeachers.some((val) => val === teacher.id)}
+                    onChange={handleChangeTeachers}
+                  />
+                  <label htmlFor={teacher.id}>{teacher.name}</label>
                 </div>
-                <div className='col-4'>
-                    <h3 className='mb-2'>Guruhlar ro'yhati</h3>
-                    <form>
-                        {courses.map((course) => (
-                            <div key={course.id}>
-                                <input 
-                                    id={course.id} 
-                                    value={course.id}
-                                    name={course.speciality}
-                                    type="checkbox"
-                                    checked={selectedCourses.some(val => val === course.id)}
-                                    onChange={handleChangeCourses}
-                                />
-                                <label htmlFor={course.id}>{course.speciality}</label>
-                            </div>
-                        ))}
-                    </form>
+              ))}
+            </div>
+            <div className="col-4">
+              <h3 className="mb-2">Guruhlar ro'yhati</h3>
+              {courses.map((course) => (
+                <div className="form__elements" key={course.id}>
+                  <input
+                    id={course.id}
+                    // value={course.id}
+                    name={course.speciality}
+                    type="checkbox"
+                    checked={selectedCourses.some((val) => val === course.id)}
+                    onChange={handleChangeCourses}
+                  />
+                  <label htmlFor={course.id}>{course.speciality}</label>
                 </div>
-                <div className='col-4'>
-                    <h3 className='mb-2'>Xonalar ro'yhati</h3>
-                    <form>
-                        {rooms.map((item) => (
-                            <div key={item.id}>
-                                <input
-                                    id={item.id}
-                                    value={item.id}
-                                    name={item.room}
-                                    type="checkbox"
-                                    checked={selectedRooms.some(val => val === item.id)}
-                                    onChange={handleChangeRooms}
-                                />
-                                <label htmlFor={item.id}>{item.room}</label>
-                            </div>
-                        ))}
-                    </form>   
+              ))}
+            </div>
+            <div className="col-4">
+              <h3 className="mb-2">Xonalar ro'yhati</h3>
+              {rooms.map((item) => (
+                <div className="form__elements" key={item.id}>
+                  <input
+                    id={item.id}
+                    value={item.id}
+                    name={item.room}
+                    type="checkbox"
+                    checked={selectedRooms.some((val) => val === item.id)}
+                    onChange={handleChangeRooms}
+                  />
+                  <label htmlFor={item.id}>{item.room}</label>
                 </div>
-            </div>  
-
-        </Modal>
+              ))}
+            </div>
         </div>
-    );
+        </form>
+      </Modal>
+    </div>
+  );
 };
-export default ModalInfo
+export default ModalInfo;

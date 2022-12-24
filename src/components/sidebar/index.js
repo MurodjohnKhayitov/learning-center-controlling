@@ -16,23 +16,31 @@ const Sidebar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/foundation' activeclassname='active'>
+                        <NavLink to='/react' activeclassname='active'>
                             <span>
                                 <i className="fas fa-compass"></i>
                             </span>
-                            Foundation
+                            Frontend(React JS)
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/frontend' activeclassname='active'>
+                        <NavLink to='/angular' activeclassname='active'>
                             <span>
                                 <i className="fas fa-compass"></i>
                             </span>
-                            Frontend
+                            Frontend(Angular JS)
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/backend' activeclassname='active'>
+                        <NavLink to='/vue' activeclassname='active'>
+                            <span>
+                                <i className="fas fa-compass"></i>
+                            </span>
+                            Frontend(Vue JS)
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/node' activeclassname='active'>
                             <span>
                                 <i className="fas fa-compass"></i>
                             </span>
@@ -40,35 +48,19 @@ const Sidebar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/backjava' activeclassname='active'>
+                        <NavLink to='/python' activeclassname='active'>
+                            <span>
+                                <i className="fas fa-compass"></i>
+                            </span>
+                            Backend(Python)
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/java' activeclassname='active'>
                             <span>
                                 <i className="fas fa-compass"></i>
                             </span>
                             Backend(Java)
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/flutter' activeclassname='active'>
-                            <span>
-                                <i className="fas fa-compass"></i>
-                            </span>
-                            Flutter
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/ios' activeclassname='active'>
-                            <span>
-                                <i className="fas fa-compass"></i>
-                            </span>
-                            IOS
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/android' activeclassname='active'>
-                            <span>
-                                <i className="fas fa-compass"></i>
-                            </span>
-                            Android
                         </NavLink>
                     </li>
                     <li>
@@ -77,22 +69,6 @@ const Sidebar = () => {
                                 <i className="fas fa-compass"></i>
                             </span>
                             UX/UI design
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/kfront' activeclassname='active'>
-                            <span>
-                                <i className="fas fa-compass"></i>
-                            </span>
-                            Kids Frontend
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/kback' activeclassname='active'>
-                            <span>
-                                <i className="fas fa-compass"></i>
-                            </span>
-                            Kids Backend
                         </NavLink>
                     </li>
                     <hr />

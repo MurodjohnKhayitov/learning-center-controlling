@@ -1,0 +1,11 @@
+.row {
+    display: flex;
+    align-items: center;
+    input{
+        width: 18px;
+        height: 18px;
+    }
+    label {
+        margin-left: 20px;
+    }
+}
