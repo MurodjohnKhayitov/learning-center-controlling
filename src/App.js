@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Courses from "./components/courses";
 import Group from "./components/group";
 import Header from "./components/header";
 import Room from "./components/room";
@@ -12,7 +11,6 @@ import Instructor from "./components/teachers";
 import TimeTable from "./components/timeTable/timeTable";
 import Backend from "./views/Backend";
 
-import Foundation from "./views/Foundation";
 import Frontend from "./views/Frontend";
 import Home from "./views/Home";
 
@@ -26,9 +24,12 @@ const App = () => {
             <div className="wrapper">
               <Routes>
                 <Route path="/" element={ <Home /> } />
-                <Route path='/foundation' element={<Foundation />} />
-                <Route path='/frontend' element={<Frontend />} />
-                <Route path='/backend' element={<Backend />} />
+                <Route path='/react' element={<Frontend />} />
+                <Route path='/vue' element={<Frontend />} />
+                <Route path='/angular' element={<Frontend />} />
+                <Route path='/java' element={<Backend />} />
+                <Route path='/python' element={<Backend />} />
+                <Route path='/node' element={<Backend />} />
                 <Route path='/teachers' element={<Teachers />} />
                 <Route path='/room' element={<Room />} />
                 <Route path='/group' element={<Group />} />

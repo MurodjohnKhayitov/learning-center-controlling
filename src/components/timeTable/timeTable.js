@@ -2,61 +2,130 @@ import React, { useState } from "react";
 import ModalInfo from "./modal";
 import "./timeTable.scss";
 
-const timeTable = [
-  {
-    id:1,
-    lessonHour: '9:00 - 11:00',
-    dayWeek: [
-      {
-        id:1,
-        teacher: 'Aliyev Vali',
-        group: 'Group 001',
-        room: 'Xona 11'
-      },
-      {
-        id:2,
-        teacher: 'Karimov Dovron',
-        group: 'Group 002',
-        room: 'Xona 12'
-      },
-      {
-        id:3,
-        lessonHour: '9:00 - 11:00',
-        teacher: 'Jo`rayeva Asila',
-        group: 'Group 003',
-        room: 'Xona 13'
-      },
-      {
-        id:4,
-        lessonHour: '9:00 - 11:00',
-        teacher: 'Qurbonov Bekzod',
-        group: 'Group 004',
-        room: 'Xona 14'
-      },
-      {
-        id:5,
-        lessonHour: '9:00 - 11:00',
-        teacher: 'Hasanova Kamola',
-        group: 'Group 005',
-        room: 'Xona 15'
-      },
-      {
-        id:6,
-        lessonHour: '9:00 - 11:00',
-        teacher: 'Berdiyev Javohir',
-        group: 'Group 006',
-        room: 'Xona 16'
-      },
-      {
-        id:6,
-        lessonHour: '9:00 - 11:00',
-        teacher: 'Berdiyev Javohir',
-        group: 'Group 006',
-        room: 'Xona 16'
-      },
-    ]
-  }
-]
+// const data = [
+//   {
+//     monday: [
+//       {
+//         id: 1,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       },
+  
+//       {
+//         id: 2,
+//         name: "Jurayeva Sabina",
+//         Group: "Frontend(Vue)",
+//         room: "Xona 2",
+//         time: '11:00-13:00'
+//       },
+//     ],
+//   },
+//   {
+//     tuesday: [
+//       {
+//         id: 5,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       },
+//       {
+//         id: 6,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       },
+//       {
+//         id: 7,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       },
+//       {
+//         id: 8,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       }
+//     ],
+//   },{
+//     wednesday: [
+//       {
+//         id: 7,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       },
+//       {
+//         id: 4,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       }
+//     ],
+//   },{
+//     thursday: [
+//       {
+//         id: 7,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       },
+//       {
+//         id: 4,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       }
+//     ],
+//   },{
+//     friday: [
+//       {
+//         id: 7,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       },
+//       {
+//         id: 4,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       }
+//     ],
+//   },{
+//     saturday: [
+//       {
+//         id: 7,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       },
+//       {
+//         id: 4,
+//         name: "Aliyev Vali",
+//         Group: "Frontend(react)",
+//         room: "Xona 1",
+//         time: '09:00-11:00'
+//       }
+//     ],
+//   },{
+//     sunday: []
+//   }
+// ]
+
 const teachers = [
   {
       id: "1",
@@ -73,29 +142,29 @@ const teachers = [
 ]
 const courses = [
   {
-      id: "1",
+      id: "4",
       speciality: "Frontend"
   },
   {
-      id: "2",
+      id: "5",
       speciality: "Backend"
   },
   {
-      id: "3",
+      id: "6",
       speciality: "Flutter"
   },
 ]
 const rooms = [
   {
-      id: "1",
+      id: "7",
       room: "Xona 1"
   },
   {
-      id: "2",
+      id: "8",
       room: "Xona 2"
   },
   {
-      id: "3",
+      id: "9",
       room: "Xona 3"
   },
 ]
@@ -114,7 +183,6 @@ const TimeTable = () => {
         <table>
           <thead>
             <tr>
-              <th></th>
               <th>Dushanba</th>
               <th>Seshanba</th>
               <th>Chorshanba</th>
@@ -125,19 +193,19 @@ const TimeTable = () => {
             </tr>
           </thead>
           <tbody>
-            {timeTable.map( table => (
-                  <tr key={table.id}>
-                      <td>{table.lessonHour}</td>
-                      
-                      {table?.dayWeek?.map((day, id) => (
-                          <td key={id}>
-                            <div className="name">{day.teacher}</div>
-                            <div className="name">{day.group}</div>
-                            <div className="name">{day.room}</div>
-                          </td>
-                      ))}
-                  </tr>   
-            ))}
+            <tr>
+              {teachers.map((item,id) => {
+                  <td key={id}>
+                      {/* <div>{item.monday.name}</div> */}
+                  </td>
+              })}
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
           </tbody>
         </table>
     </div>
@@ -147,3 +215,17 @@ const TimeTable = () => {
 };
 
 export default TimeTable;
+
+
+// {data.map( item => (
+//   <tr key={item.id}>
+//     {item?.rooms?.map((room, id) => (
+//         <td key={id}>
+//           <div className="name">{room.name}</div>
+//           <div className="name">{room.group}</div>
+//           <div className="name">{room.room}</div>
+//           <div className="name">{room.date}</div>
+//         </td>
+//     ))}
+// </tr>   
+// ))}
