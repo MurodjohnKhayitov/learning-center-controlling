@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Context } from "../Context/Context";
+import { AllDataBase } from "../Context/Context";
 
 const useDataContext = () => {
-  const ctx = useContext(Context);
+  const ctx = useContext(AllDataBase);
   return [ctx.data, ctx.setData];
 };
 

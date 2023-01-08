@@ -21,7 +21,7 @@ const ModalInfo = ({ teachers, courses, rooms }) => {
     const { id, checked } = e.target;
     setSelectedTeachers((item) => {
       return checked ? [...item, id] : item.filter((val) => val !== id);
-    });   
+    });
   };
   // console.log(selectedTeachers);
 
@@ -46,6 +46,7 @@ const ModalInfo = ({ teachers, courses, rooms }) => {
   const handleSubmit = () => {
     let data = [selectedTeachers, selectedCourses, selectedRooms];
     console.log(data)
+
   }
 
   return (
@@ -58,19 +59,20 @@ const ModalInfo = ({ teachers, courses, rooms }) => {
         Jadval qo'shish
       </Button>
       <Modal
-        title="Jadval ma'lumotini qo'shish" 
+        title="Jadval ma'lumotini qo'shish"
         className="title"
         centered
         open={open}
         onOk={() => {
-            setOpen(false)
-            handleSubmit()
+          setOpen(false)
+          handleSubmit()
         }}
         onCancel={() => setOpen(false)}
         width={1000}
-      > 
-      <form>
-        <div className="row">   
+      >
+
+        <form>
+          <div className="row">
             <div className="col-4">
               <h3 className="mb-2">Domlalar ro'yhati</h3>
               {teachers.map((teacher) => (
@@ -83,7 +85,7 @@ const ModalInfo = ({ teachers, courses, rooms }) => {
                     checked={selectedTeachers.some((val) => val === teacher.id)}
                     onChange={handleChangeTeachers}
                   />
-                  <label htmlFor={teacher.id}>{teacher.name}</label>
+                  <label htmlFor={teacher.id}>{teacher.name} (front)</label>
                 </div>
               ))}
             </div>
@@ -119,7 +121,7 @@ const ModalInfo = ({ teachers, courses, rooms }) => {
                 </div>
               ))}
             </div>
-        </div>
+          </div>
         </form>
       </Modal>
     </div>
